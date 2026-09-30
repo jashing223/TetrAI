@@ -1,0 +1,57 @@
+# ---------------------------------------------------------------------------
+# Python virtual environment
+# ---------------------------------------------------------------------------
+# lib/tetrisAI is a ~2 GB virtualenv (TensorFlow/Keras), not source code.
+# Its exact path is hardcoded in serverHandler.pde, so it must be recreated
+# at lib/tetrisAI — see the "Setup on Arch Linux" section of README.md.
+lib/tetrisAI/
+.venv/
+venv/
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# ---------------------------------------------------------------------------
+# AI training artifacts (lib/ai)
+# ---------------------------------------------------------------------------
+lib/ai/logs/
+lib/ai/basic/
+
+# Keep lib/ai/best.keras and lib/ai/sample.keras tracked on purpose:
+# lib/server.py loads ai/best.keras at startup, so ignoring it (as upstream
+# lib/ai/.gitignore does) would break a fresh clone.
+!lib/ai/best.keras
+!lib/ai/sample.keras
+
+# ---------------------------------------------------------------------------
+# Processing / Java build output
+# ---------------------------------------------------------------------------
+*.class
+*.jar
+out/
+bin/
+build/
+application.linux*/
+application.windows*/
+application.macosx*/
+
+# ---------------------------------------------------------------------------
+# Editors / IDEs
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+*.iml
+*.swp
+*~
+
+# ---------------------------------------------------------------------------
+# OS cruft
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
